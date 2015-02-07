@@ -1,6 +1,10 @@
+'use strict';
+
+// lib
 let React = require('react');
 
-let Home = React.createClass({
+// component
+let Home  = React.createClass({
   getInitialState() {
     return {
       text: 'Click Me!'
@@ -12,8 +16,8 @@ let Home = React.createClass({
     });
   },
   render() {
-    return
-      `<div className="container">
+    return (
+      <div className="container">
         <div className="header">
           <ul className="nav nav-pills pull-right">
             <li className="active"><a href="#">Home</a></li>
@@ -52,7 +56,8 @@ let Home = React.createClass({
         <div className="footer">
           <p>♥ from the Yeoman team</p>
         </div>
-      </div>`
+      </div>
+    );
   }
 })
 
