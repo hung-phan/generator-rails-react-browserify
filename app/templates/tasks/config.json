@@ -1,0 +1,21 @@
+{
+  "development": {
+    "path": "./app/assets/source/",
+    "src": "./app/assets/source/*-build.js",
+    "build": "./app/assets/javascripts/build"
+  },
+  "production": {
+    "src": "./app/assets/source/*-build.js",
+    "build": "./app/assets/javascripts/build"
+  },
+  "browserify": {
+    "transform": {
+      "literalify": {
+        "jquery": "window.$",
+        "lodash": "window._",
+        "react": "window.React",
+        "superagent": "window.superagent"
+      }
+    }
+  }
+}
