@@ -48,8 +48,8 @@ let Home  = React.createClass({
             <h1 onClick={this.clickMeUpdate}>{this.state.text}</h1>
           </div>
           <div className="col-lg-6">
-            <h4>RequireJs</h4>
-            <p>RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.</p>
+            <h4>Browserify</h4>
+            <p>Browserify lets you require('modules') in the browser by bundling up all of your dependencies.</p>
           </div>
         </div>
 
