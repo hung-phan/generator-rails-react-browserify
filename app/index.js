@@ -78,7 +78,6 @@ module.exports = yeoman.generators.Base.extend({
       choices: [
         { name: 'Lodash.js'                      , value: 'includeLodash'      , checked: true } ,
         { name: 'REST superagent by visionmedia' , value: 'includeSuperagent'  , checked: true } ,
-        { name: 'React Addons'                   , value: 'includeReactAddons' , checked: true } ,
         { name: 'Modernizr'                      , value: 'includeModernizr'   , checked: true }
       ]
     }];
@@ -88,7 +87,6 @@ module.exports = yeoman.generators.Base.extend({
 
       // JS
       this.includeLodash      = includeJS('includeLodash');
-      this.includeReactAddons = includeJS('includeReactAddons');
       this.includeSuperagent  = includeJS('includeSuperagent');
       this.includeModernizr   = includeJS('includeModernizr');
       cb();
@@ -146,10 +144,17 @@ module.exports = yeoman.generators.Base.extend({
     shell.exec("rake bower:install");
   },
 
-  npmInstall: function() {
-    shell.exec("npm install && npm update --save");
+  copyTasks: function() {
+    this.copy('_package.json', 'package.json');
+    this.copy('_bowerrc', '.bowerrc');
+    this.copy('_gulpfile.js', 'gulpfile.js');
+    this.directory('tasks', 'tasks');
   },
 
+  npmInstall: function() {
+    console.log(magenta('Install npm dependencies'));
+    shell.exec("npm install");
+  },
   mongodb: function() {
     if (this.includeMongodb) {
       shell.exec("rails g mongoid:config");
@@ -168,10 +173,6 @@ module.exports = yeoman.generators.Base.extend({
         this.write(path, file.replace(hook, hook + insert));
       }
     }
-  },
-
-  copyTasks: function() {
-    this.directory('tasks', 'tasks');
   },
 
   grapeInitFile: function() {
@@ -222,8 +223,8 @@ module.exports = yeoman.generators.Base.extend({
 
 
     this.write(path, file);
-    this.template('app/main.jsx', 'app/assets/sources/main-build.jsx');
-    this.template('app/home/home.jsx', 'app/assets/sources/home/home.jsx');
+    this.template('app/main.js', 'app/assets/sources/main-build.js');
+    this.template('app/home/home.js', 'app/assets/sources/home/home.js');
   },
 
   reactConfig: function() {
@@ -231,7 +232,7 @@ module.exports = yeoman.generators.Base.extend({
     var path   = 'config/environments/development.rb',
         hook   = 'Rails.application.configure do\n',
         file   = this.readFileAsString(path),
-        insert = "config.react.variant = :development\nconfig.react.addons = true\n";
+        insert = "  config.react.variant = :development\n  config.react.addons = true\n";
 
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, hook + insert));
@@ -241,7 +242,7 @@ module.exports = yeoman.generators.Base.extend({
     path   = 'config/environments/production.rb',
     hook   = 'Rails.application.configure do\n',
     file   = this.readFileAsString(path),
-    insert = "config.react.variant = :production\nconfig.react.addons = true\n";
+    insert = "  config.react.variant = :development\n  config.react.addons = true\n";
 
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, hook + insert));

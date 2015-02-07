@@ -7,7 +7,7 @@ let superagent = require('superagent');
 let Router     = require('react-router');
 
 // component
-let Home = require('./react/home');
+let Home = require('./home/home');
 
 $(document).ready(function() {
   // define routing
