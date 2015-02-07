@@ -1,9 +1,9 @@
 'use strict'
 
 // lib
-let $          = require('jquery');
-let _          = require('lodash');
-let superagent = require('superagent');
+let $          = require('jquery');<% if (includeLodash) { %>
+let _          = require('lodash');<% } %><% if (includeSuperagent) { %>
+let superagent = require('superagent');<% } %>
 let Router     = require('react-router');
 
 // component
