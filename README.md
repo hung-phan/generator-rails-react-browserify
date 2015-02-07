@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-[![NPM](https://nodei.co/npm/generator-rails-react.png?downloads=true)](https://nodei.co/npm/generator-rails-react/)
+[![NPM](https://nodei.co/npm/generator-rails-react-browserify.png?downloads=true)](https://nodei.co/npm/generator-rails-react-browserify/)
 
 ## Getting Started
 
