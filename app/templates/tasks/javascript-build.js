@@ -30,7 +30,7 @@ gulp.task('javascript:clean', function () {
 });
 
 // watch task
-gulp.task('javascript:dev', ['javascript:clean'], function () {
+gulp.task('javascript:dev', function () {
   var bundle,
       bundler,
       cached = {},

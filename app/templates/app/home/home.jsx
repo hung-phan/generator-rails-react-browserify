@@ -12,7 +12,7 @@ let Home  = React.createClass({
   },
   clickMeUpdate(event) {
     this.setState({
-      text: @state.text.split('').reverse().join('')
+      text: this.state.text.split('').reverse().join('')
     });
   },
   render() {
@@ -61,4 +61,4 @@ let Home  = React.createClass({
   }
 })
 
-export Home;
+module.exports = Home;

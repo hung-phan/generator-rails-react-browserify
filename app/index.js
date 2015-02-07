@@ -220,6 +220,28 @@ module.exports = yeoman.generators.Base.extend({
     this.template('app/home/home.jsx', 'app/assets/sources/home/home.jsx');
   },
 
+  reactConfig: function() {
+    console.log(magenta('Processing config/environments/development.rb'));
+    var path   = 'config/environments/development.rb',
+        hook   = 'Rails.application.configure do\n',
+        file   = this.readFileAsString(path),
+        insert = "config.react.variant = :development\nconfig.react.addons = true\n";
+
+    if (file.indexOf(insert) === -1) {
+      this.write(path, file.replace(hook, hook + insert));
+    }
+
+    console.log(magenta('Processing config/environments/production.rb'));
+    path   = 'config/environments/production.rb',
+    hook   = 'Rails.application.configure do\n',
+    file   = this.readFileAsString(path),
+    insert = "config.react.variant = :production\nconfig.react.addons = true\n";
+
+    if (file.indexOf(insert) === -1) {
+      this.write(path, file.replace(hook, hook + insert));
+    }
+  },
+
   routes: function() {
     console.log(magenta('Processing config/routes.rb'));
     var path   = 'config/routes.rb',
