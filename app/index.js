@@ -24,9 +24,8 @@ module.exports = yeoman.generators.Base.extend({
       name: 'cssFile',
       message: 'What css library would you like to include?',
       choices: [
-        { name: 'SASS Button by Alexwolfe' , value: 'includeButtonCss'   , checked: false },
-        { name: 'Animate SCSS'             , value: 'includeAnimateCss'  , checked: false },
-        { name: 'Bootstrap font-awesome'   , value: 'includeFontAwesome' , checked: true }
+        { name: 'Animate SCSS'           , value: 'includeAnimateCss'  , checked: false } ,
+        { name: 'Bootstrap font-awesome' , value: 'includeFontAwesome' , checked: true }
       ]
     }];
 
@@ -34,7 +33,6 @@ module.exports = yeoman.generators.Base.extend({
       function includeCSS(css) { return props.cssFile.indexOf(css) !== -1; }
 
       // CSS
-      this.includeButtonCss   = includeCSS('includeButtonCss');
       this.includeAnimateCss  = includeCSS('includeAnimateCss');
       this.includeFontAwesome = includeCSS('includeFontAwesome');
 
@@ -257,9 +255,6 @@ module.exports = yeoman.generators.Base.extend({
   stylesheets: function() {
     console.log(magenta('Processing app stylesheets'));
     var extra  = '';
-    if (this.includeButtonCss) {
-      extra += " *= require Buttons/scss/buttons.scss\n";
-    }
     if (this.includeAnimateCss) {
       extra += " *= require animate-sass/_animate.scss\n";
     }

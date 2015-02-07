@@ -2,6 +2,5 @@
 
 asset 'lodash'<% } %>
 asset 'react-router'<% if (includeSuperagent) { %>
-asset 'superagent'<% } %><% if (includeButtonCss) { %>
-asset 'Buttons'<% } %><% if (includeAnimateCss) { %>
+asset 'superagent'<% } %><% if (includeAnimateCss) { %>
 asset 'animate-sass'<% } %>
