@@ -32,9 +32,7 @@ group :development do
   gem 'meta_request'
 end
 # react jsx compile
-gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
-# browserify
-gem 'browserify-rails'<% if (includeButtonCss) { %>
+gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'<% if (includeButtonCss) { %>
 # button sass
 gem 'compass-rails'<% } %><% if (includeFontAwesome) { %>
 # font awesome
