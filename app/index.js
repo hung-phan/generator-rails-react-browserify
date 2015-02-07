@@ -146,10 +146,8 @@ module.exports = yeoman.generators.Base.extend({
     shell.exec("rake bower:install");
   },
 
-  requirejs: function() {
-    //requirejs config
-    console.log(magenta('Requirejs config/requirejs.yml'));
-    this.template('config/requirejs.yml', 'config/requirejs.yml');
+  npmInstall: function() {
+    shell.exec("npm install && npm update --save");
   },
 
   mongodb: function() {
@@ -172,6 +170,10 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
 
+  copyTasks: function() {
+    this.directory('tasks', 'tasks');
+  },
+
   grapeInitFile: function() {
     if (this.includeGrape) {
       this.directory('api', 'app/api');
@@ -187,17 +189,6 @@ module.exports = yeoman.generators.Base.extend({
 
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, hook + insert));
-    }
-  },
-
-  assetsPath: function() {
-    //include config into config/initializers/assets.rb
-    var path   = 'config/initializers/assets.rb',
-        file   = this.readFileAsString(path),
-        insert = 'Rails.application.config.assets.precompile += %w( react_ujs.js )';
-
-    if (file.indexOf(insert) === -1) {
-      this.write(path, file + insert);
     }
   },
 
