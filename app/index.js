@@ -216,7 +216,7 @@ module.exports = yeoman.generators.Base.extend({
                .replace("//= require_tree .",
                         "//= require react\n" +
                         "//= require react_ujs\n" +
-                        "//= require superagent/superagent\n" +
+                        (this.includeSuperagent ? "//= require superagent/superagent\n" : "") +
                         "//= require react-router/dist/react-router\n" +
                         "//= require build/main-build");
 
