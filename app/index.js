@@ -212,14 +212,12 @@ module.exports = yeoman.generators.Base.extend({
         file   = this.readFileAsString(path);
 
     //modify file before insert
-    file = file.replace("//= require jquery\n", '')
-               .replace("//= require jquery_ujs\n", '')
-               .replace("//= require turbolinks\n", '')
-               .replace("//= require_tree .", '//= require main');
+    file = file.replace("//= require turbolinks\n", '')
+               .replace("//= require_tree .", '//= require react\n//= require react_ujs\n//= require build/main-build');
 
     this.write(path, file);
-    this.template('app/main.jsx.coffee', 'app/assets/javascripts/main.jsx.coffee');
-    this.template('app/home/home.js.jsx.coffee', 'app/assets/javascripts/home/home.js.jsx.coffee');
+    this.template('app/main.jsx', 'app/assets/sources/main-build.jsx');
+    this.template('app/home/home.jsx', 'app/assets/sources/home/home.jsx');
   },
 
   routes: function() {
