@@ -20,7 +20,7 @@ $ npm install -g generator-rails-react-browserify
 
 ## Usage for Rails 4.*
 
-Firstly, create Ruby on Rails project with normal rails command, but skip it bundle:
+Firstly, create Ruby on Rails project with normal `rails` command, but skip it bundle:
 
 ```bash
 $ rails new app-name --skip-bundle
@@ -36,15 +36,15 @@ $ yo rails-react-browserify
 Answer 'Yes' to all 'Overwrite' actions. Then config the 'config/database.yml' if you use different
 database than sqlite3.
 
-## Template
+## Application template
 I define all the react components with suffix __.js.jsx.coffee__ based on [react-rails](https://github.com/reactjs/react-rails).
 For code fragments, I like the way of require.js controlling application by module rather than defining all js file in __application.js__
 
 ## Assets compile
-
 Compile your assets before deploying to production server
 
 ```bash
+$ gulp javascript:build
 $ rake assets:precompile RAILS_ENV=production
 ```
 
@@ -64,18 +64,6 @@ or install [LiveReload Safari/Chrome extension](http://feedback.livereload.com/k
 ```bash
 $ bundle exec guard # to run the guard server and enjoy coding
 ```
-### Testing
-Working on
-
-### Subgenerators
-
-This also supports for subgenerator for `component` as well. Make sure you link them in your
-__main.js__
-
-```bash
-$ yo rails-react:component "name" #replace the name with your module name
-
-```
 ## Structure
 
 ```
@@ -84,10 +72,12 @@ application/
   |  |- assets/
   |  |  |- images/
   |  |  |- javascripts/
-  |  |  |  |- <codeModule>/
-  |  |  |  |  |- codeModule.js.jsx.coffee
+  |  |  |  |- build/
+  |  |  |  |  |- page-module-build.js
   |  |  |  |- application.js
-  |  |  |  |- main.jsx.coffee # main file
+  |  |  |- sources/
+  |  |  |  |- <page-module>/
+  |  |  |  |- <page-module>-build.js
   |  |  |- stylesheets/
   |  |  |  |- application.css
   |  |- controllers/
@@ -103,19 +93,24 @@ application/
   |- config/
   |  |- initializers/
   |  |  |- bower_rails.rb # bower rails config
-  |  |- requirejs.yml # requirejs config file
   |- db/
   |- lib/
   |- log/
   |- public/
+  |- tasks/
+  |  |- config.json
+  |  |- errors-handler.js
+  |  |- javascript-build.js
   |- test/
-  |- tmp/
   |- vendor/
   |  |- assets/
   |  |  |- bower_components/
   |  |  |  |- third libararies/
   |- |  |- bower.json
   |- Bowerfile # define all bower_components here
+  |- config.ru
+  |- gulpfile.js
+  |- package.json
   |- config.ru
   |- Gemfile
   |- Gemfile.lock
