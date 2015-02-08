@@ -30,8 +30,18 @@ $ yo rails-react-browserify
 Answer 'Yes' to all 'Overwrite' actions. Then update 'config/database.yml' if you use different database than 'sqlite3'.
 
 ## Application template
-I define all the react components with suffix __.js.jsx.coffee__ based on [react-rails](https://github.com/reactjs/react-rails).
-For code fragments, I like the way of require.js controlling application by module rather than defining all js file in __application.js__
+
+### package.json
+
+Manage development dependencies for javascript with incremental rebuilding for each module. Turn ES6+ code into vanilla ES5
+using [6to5](https://6to5.org/) with the support of [Browserify](http://browserify.org/) for javascript moduling. Inject
+`regeneratorRunTime` environment to support ES6 generators feature which allows you to using modern javascript libraries like
+[js-csp](https://github.com/ubolonton/js-csp) today.
+
+### gulpfile.js
+- `tasks/config.json`
+- `tasks/errors-handler.json`
+- `tasks/javascript-build.json`
 
 ## Assets compile
 Compile your assets before deploying to production server
