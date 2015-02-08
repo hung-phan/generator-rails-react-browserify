@@ -6,13 +6,7 @@
 
 ## Getting Started
 
-To run this version of yeoman generator. First, make sure that you have already installed yeoman
-
-```bash
-$ npm install -g yo
-```
-
-To install generator-rails-react-browserify from npm, run:
+Install `generator-rails-react-browserify` from npm, run:
 
 ```bash
 $ npm install -g generator-rails-react-browserify
@@ -20,21 +14,20 @@ $ npm install -g generator-rails-react-browserify
 
 ## Usage for Rails 4.*
 
-Firstly, create Ruby on Rails project with normal `rails` command, but skip it bundle:
+Create Ruby on Rails project with normal `rails` command, but skip gem bundling:
 
 ```bash
 $ rails new app-name --skip-bundle
 ```
 
-Finally, initiate the generator:
+Then, initiate the generator:
 
 ```bash
 $ cd app-name
 $ yo rails-react-browserify
 ```
 
-Answer 'Yes' to all 'Overwrite' actions. Then config the 'config/database.yml' if you use different
-database than sqlite3.
+Answer 'Yes' to all 'Overwrite' actions. Then update 'config/database.yml' if you use different database than 'sqlite3'.
 
 ## Application template
 I define all the react components with suffix __.js.jsx.coffee__ based on [react-rails](https://github.com/reactjs/react-rails).
@@ -107,7 +100,7 @@ application/
   |  |  |- bower_components/
   |  |  |  |- third libararies/
   |- |  |- bower.json
-  |- Bowerfile # define all bower_components here
+  |- Bowerfile # bower package dependencies
   |- config.ru
   |- gulpfile.js
   |- package.json
