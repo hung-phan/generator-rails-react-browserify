@@ -35,7 +35,7 @@ Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if y
 
 ## Application template
 
-I define all my javascript module in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
+I define all my javascript modules in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
 folder later.
 
 ### package.json
