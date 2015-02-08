@@ -67,6 +67,18 @@ $ guld javascript:dev --only main-build.js # watch over changes for single js mo
 $ guld javascript:build # build for production with no source map
 ```
 
+## Start developing
+
+Run these commands, and start coding
+
+```bash
+$ gulp javascript:dev
+```
+
+```bash
+$ rails server
+```
+
 ## Assets compile
 Compile your assets before deploying to production server
 
