@@ -31,6 +31,9 @@ Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if y
 
 ## Application template
 
+I define all my javascript module in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
+folder later.
+
 ### package.json
 
 Manage development dependencies for javascript with incremental rebuilding for each module. Turn ES6+ code into vanilla ES5
@@ -39,13 +42,30 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 [js-csp](https://github.com/ubolonton/js-csp) today.
 
 ### gulpfile.js
+
 - `tasks/config.json` is responsible for controlling development and production build for javascript modules. Additionally,
   it also contains transform configurations for [literalify](https://github.com/pluma/literalify) to replace require calls
   with arbitrary code. For example, define [literalify](https://github.com/pluma/literalify) like `"jquery": "window.$"` will
-  automatically transform `var $ = require('jquery');` into `var $ = window.$;`
+  automatically transform `var $ = require('jquery');` into `var $ = window.$;`. You can define extra configurations here, then,
+  it will be loaded into `javascript-build.js` via `config = require('./config.json');`
+- `tasks/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
+  has use this functions
+- `tasks/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
 
-- `tasks/errors-handler.json`
-- `tasks/javascript-build.json`
+### Current transformation applied
+
+- [6to5ify](https://github.com/6to5/6to5ify)
+- [literalify](https://github.com/pluma/literalify)
+- [debowerify](https://github.com/eugeneware/debowerify)
+
+### Available gulp task
+
+```bash
+$ guld javascript:clean # remove the build folder placed at 'app/assets/javascripts/build'
+$ guld javascript:dev # watch over changes for multiple js bundle
+$ guld javascript:dev --only main-build.js # watch over changes for single js module
+$ guld javascript:build # build for production with no source map
+```
 
 ## Assets compile
 Compile your assets before deploying to production server
