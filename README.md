@@ -158,6 +158,8 @@ application/
   |- README.rdoc
 ```
 
+## Running example
+
 ## Contribution
 All contributions are welcomed.
 
