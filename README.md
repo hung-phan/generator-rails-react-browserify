@@ -12,10 +12,10 @@ To run this version of yeoman generator. First, make sure that you have already 
 $ npm install -g yo
 ```
 
-To install generator-rails-react from npm, run:
+To install generator-rails-react-browserify from npm, run:
 
 ```bash
-$ npm install -g generator-rails-react
+$ npm install -g generator-rails-react-browserify
 ```
 
 ## Usage for Rails 4.*
@@ -30,21 +30,11 @@ Finally, initiate the generator:
 
 ```bash
 $ cd app-name
-$ yo rails-react
+$ yo rails-react-browserify
 ```
 
 Answer 'Yes' to all 'Overwrite' actions. Then config the 'config/database.yml' if you use different
 database than sqlite3.
-
-Other dependencies
-
-1. SASS (gem install sass)
-
-2. Compass (gem install compass)
-
-### Update development config
-Update `config.assets.digest = false` in `config/environments/development.rb` to enable compilation on the fly so
-that any asset file changes are detected by the Rails Server
 
 ## Template
 I define all the react components with suffix __.js.jsx.coffee__ based on [react-rails](https://github.com/reactjs/react-rails).
