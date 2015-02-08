@@ -159,6 +159,7 @@ application/
 ```
 
 ## Running example
+![alt text](https://raw.githubusercontent.com/hung-phan/generator-rails-react-browserify/master/screenshot.png "application screenshot")
 
 ## Contribution
 All contributions are welcomed.
@@ -166,4 +167,3 @@ All contributions are welcomed.
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
-
