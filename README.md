@@ -29,6 +29,10 @@ $ yo rails-react-browserify
 
 Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if you use different database than 'sqlite3'.
 
+## Dependencies
+
+- [Bower](http://bower.io/) via `npm install -g bower`
+
 ## Application template
 
 I define all my javascript module in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
