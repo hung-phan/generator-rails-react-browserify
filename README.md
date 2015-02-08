@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-Install `generator-rails-react-browserify` from npm, run:
+To install `generator-rails-react-browserify` from npm, run:
 
 ```bash
 $ npm install -g generator-rails-react-browserify
@@ -27,7 +27,7 @@ $ cd app-name
 $ yo rails-react-browserify
 ```
 
-Answer 'Yes' to all 'Overwrite' actions. Then update 'config/database.yml' if you use different database than 'sqlite3'.
+Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if you use different database than 'sqlite3'.
 
 ## Application template
 
@@ -39,7 +39,11 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 [js-csp](https://github.com/ubolonton/js-csp) today.
 
 ### gulpfile.js
-- `tasks/config.json`
+- `tasks/config.json` is responsible for controlling development and production build for javascript modules. Additionally,
+  it also contains transform configurations for [literalify](https://github.com/pluma/literalify) to replace require calls
+  with arbitrary code. For example, define [literalify](https://github.com/pluma/literalify) like `"jquery": "window.$"` will
+  automatically transform `var $ = require('jquery');` into `var $ = window.$;`
+
 - `tasks/errors-handler.json`
 - `tasks/javascript-build.json`
 
