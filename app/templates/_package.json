@@ -11,6 +11,7 @@
     "gulp-plumber": "*",
     "gulp-util": "*",
     "literalify": "*",
+    "debowerify": "*",
     "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
@@ -19,9 +20,7 @@
     "vinyl-transform": "*",
     "watchify": "*"
   },
-  "dependencies": {
-    "debowerify": "*"
-  },
+  "dependencies": { },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
