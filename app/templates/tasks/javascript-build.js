@@ -13,7 +13,7 @@ var _             = require('lodash'),
     transform     = require('vinyl-transform'),
     browserify    = require('browserify'),
     watchify      = require('watchify'),
-    to5ify        = require('babelify'),
+    babelify      = require('babelify'),
     debowerify    = require('debowerify'),
     literalify    = require('literalify').configure(config.browserify.transform.literalify),
     minimist      = require('minimist'),
@@ -54,7 +54,7 @@ gulp.task('javascript:dev', function () {
       });
       b.on('error', errorsHandler.browserifyErrorHandler);
       b.on('update', bundle);
-      b.transform(to5ify);
+      b.transform(babelify);
       b.transform(literalify);
       b.transform(debowerify);
 
@@ -84,7 +84,7 @@ gulp.task('javascript:build', ['javascript:clean'], function() {
             });
 
     b.on('error', errorsHandler.browserifyErrorHandler);
-    b.transform(to5ify);
+    b.transform(babelify);
     b.transform(literalify);
     b.transform(debowerify);
 
