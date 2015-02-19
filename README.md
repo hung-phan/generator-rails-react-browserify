@@ -58,7 +58,7 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 
 ### Current transformation applied
 
-- [6to5ify](https://github.com/6to5/6to5ify)
+- [babelify](https://github.com/babel/babelify)
 - [literalify](https://github.com/pluma/literalify)
 - [debowerify](https://github.com/eugeneware/debowerify)
 
