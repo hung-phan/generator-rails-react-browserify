@@ -62,6 +62,9 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 - [literalify](https://github.com/pluma/literalify)
 - [debowerify](https://github.com/eugeneware/debowerify)
 
+### ES6 generator
+Add `require('babel/pollyfill');` to support es6 generator syntax
+
 ### Available gulp task
 
 ```bash

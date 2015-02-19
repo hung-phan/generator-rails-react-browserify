@@ -1,6 +1,7 @@
 {
   "name": "<%= _.slugify(appname) %>",
   "devDependencies": {
+    "babel": "*",
     "babelify": "*",
     "browserify": "=8.0.1",
     "debowerify": "*",
