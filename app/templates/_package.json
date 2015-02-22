@@ -12,7 +12,6 @@
     "gulp-util": "*",
     "literalify": "*",
     "debowerify": "*",
-    "jest-cli": "*",
     "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
