@@ -44,7 +44,7 @@ Manage development dependencies for javascript with incremental rebuilding for e
 using [6to5](https://6to5.org/) with the support of [Browserify](http://browserify.org/) for javascript moduling. Inject
 `regeneratorRunTime` environment to support ES6 generators feature which allows you to using modern javascript libraries like
 [js-csp](https://github.com/ubolonton/js-csp) today. Contain transform configurations for [browserify-shim](https://github.com/thlorenz/browserify-shim).
-Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/wiki/browserify-shim-recipes) for more informations. 
+Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/wiki/browserify-shim-recipes) for more informations.
 
 ### gulpfile.js
 
