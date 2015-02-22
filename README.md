@@ -47,11 +47,11 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 
 ### gulpfile.js
 
-- `tasks/config.json` is responsible for controlling development and production build for javascript modules. Additionally,
-  it also contains transform configurations for [browserify-shim](https://github.com/thlorenz/browserify-shim) to replace require calls
-  with arbitrary code. For example, define like `"jquery": "global:$"` will automatically transform `var $ = require('jquery');` into
-  `var $ = (typeof window !== "undefined" ? window.$ : typeof global !== "undefined" ? global.$ : null);`. You can define extra
-  configurations here, then, it will be loaded into `javascript-build.js` via `config = require('./config.json');`
+- `tasks/config.json` is responsible for controlling development and production build for javascript modules. 
+  It also contains transform configurations for [browserify-shim](https://github.com/thlorenz/browserify-shim) to replace require calls
+  with arbitrary code. View their [recipes](https://github.com/thlorenz/browserify-shim/wiki/browserify-shim-recipes) for more
+  informations. Additionally, you can define extra configurations here, then, it will be loaded into `javascript-build.js` via
+  `config = require('./config.json');`
 - `tasks/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
   has use this functions
 - `tasks/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
@@ -60,7 +60,6 @@ using [6to5](https://6to5.org/) with the support of [Browserify](http://browseri
 
 - [babelify](https://github.com/babel/babelify)
 - [browserify-shim](https://github.com/thlorenz/browserify-shim)
-- [debowerify](https://github.com/eugeneware/debowerify)
 
 ### ES6 generator
 Add `require('babel/pollyfill');` to support es6 generator syntax

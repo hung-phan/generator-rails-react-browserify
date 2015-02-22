@@ -19,6 +19,7 @@
     "watchify": "*"
   },
   "dependencies": { },
+  "browser": { },
   "browserify-shim": {
     "jquery": "global:$",
     "lodash": "global:_",
