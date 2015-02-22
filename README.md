@@ -43,14 +43,13 @@ folder later.
 Manage development dependencies for javascript with incremental rebuilding for each module. Turn ES6+ code into vanilla ES5
 using [6to5](https://6to5.org/) with the support of [Browserify](http://browserify.org/) for javascript moduling. Inject
 `regeneratorRunTime` environment to support ES6 generators feature which allows you to using modern javascript libraries like
-[js-csp](https://github.com/ubolonton/js-csp) today.
+[js-csp](https://github.com/ubolonton/js-csp) today. Contain transform configurations for [browserify-shim](https://github.com/thlorenz/browserify-shim).
+Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/wiki/browserify-shim-recipes) for more informations. 
 
 ### gulpfile.js
 
-- `tasks/config.json` is responsible for controlling development and production build for javascript modules. 
-  It also contains transform configurations for browserify. Make sure that you view their [recipes](https://github.com/thlorenz/browserify-shim/wiki/browserify-shim-recipes)
-  for more informations. Additionally, you can define extra configurations here, then, it will be loaded into `javascript-build.js` via
-  `config = require('./config.json');`
+- `tasks/config.json` is responsible for controlling development and production build for javascript modules. Additionally, you can
+  define extra configurations here, then, it will be loaded into `javascript-build.js` via `config = require('./config.json');`
 - `tasks/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
   has use this functions
 - `tasks/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
