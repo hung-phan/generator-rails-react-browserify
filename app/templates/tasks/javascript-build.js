@@ -14,8 +14,8 @@ var _             = require('lodash'),
     browserify    = require('browserify'),
     watchify      = require('watchify'),
     babelify      = require('babelify'),
+    shimify       = require('browserify-shim'),
     debowerify    = require('debowerify'),
-    literalify    = require('literalify').configure(config.browserify.transform.literalify),
     minimist      = require('minimist'),
     errorsHandler = require('./errors-handler');
 
@@ -55,7 +55,7 @@ gulp.task('javascript:dev', function () {
       b.on('error', errorsHandler.browserifyErrorHandler);
       b.on('update', bundle);
       b.transform(babelify);
-      b.transform(literalify);
+      b.transform(shimify);
       b.transform(debowerify);
 
       cached[filename] = b;
@@ -85,7 +85,7 @@ gulp.task('javascript:build', ['javascript:clean'], function() {
 
     b.on('error', errorsHandler.browserifyErrorHandler);
     b.transform(babelify);
-    b.transform(literalify);
+    b.transform(shimify);
     b.transform(debowerify);
 
     return b.bundle();

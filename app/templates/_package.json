@@ -1,16 +1,16 @@
 {
   "name": "<%= _.slugify(appname) %>",
   "devDependencies": {
-    "babel": "*",
+    "babel": "*"
     "babelify": "*",
     "browserify": "=8.0.1",
+    "browserify-shim": "*",
     "debowerify": "*",
     "del": "*",
     "gulp": "*",
     "gulp-if": "*",
     "gulp-plumber": "*",
     "gulp-util": "*",
-    "literalify": "*",
     "debowerify": "*",
     "lodash": "*",
     "minimist": "*",
@@ -21,6 +21,13 @@
     "watchify": "*"
   },
   "dependencies": { },
+  "browserify-shim": {
+    "jquery": "global:$"
+    "lodash": "global:_",
+    "react": "global:React",
+    "react-router": "global:ReactRouter",
+    "superagent": "global:superagent"
+  },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
