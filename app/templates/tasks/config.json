@@ -2,6 +2,7 @@
   "development": {
     "path": "./app/assets/sources/",
     "src": "./app/assets/sources/*-build.js",
+    "test": "./__tests__/**/*-test.js",
     "build": "./app/assets/javascripts/build"
   },
   "production": {
