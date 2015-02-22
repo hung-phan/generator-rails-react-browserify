@@ -5,13 +5,11 @@
     "babelify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
-    "debowerify": "*",
     "del": "*",
     "gulp": "*",
     "gulp-if": "*",
     "gulp-plumber": "*",
     "gulp-util": "*",
-    "debowerify": "*",
     "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
@@ -22,7 +20,7 @@
   },
   "dependencies": { },
   "browserify-shim": {
-    "jquery": "global:$"
+    "jquery": "global:$",
     "lodash": "global:_",
     "react": "global:React",
     "react-router": "global:ReactRouter",
