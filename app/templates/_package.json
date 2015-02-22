@@ -21,6 +21,12 @@
     "vinyl-transform": "*",
   },
   "dependencies": { },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "./preprocessor.js"
+  },
   "browser": { },
   "browserify-shim": {
     "jquery": "global:$",
