@@ -4,6 +4,7 @@
     "babel": "*",
     "babel-core": "*",
     "babelify": "*",
+    "envify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
     "watchify": "*"
