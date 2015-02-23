@@ -58,6 +58,7 @@ Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/
 
 - [babelify](https://github.com/babel/babelify)
 - [browserify-shim](https://github.com/thlorenz/browserify-shim)
+- [envify](https://github.com/babel/babelify)
 
 ### ES6 generator
 Add `require('babel/pollyfill');` to support es6 generator syntax
