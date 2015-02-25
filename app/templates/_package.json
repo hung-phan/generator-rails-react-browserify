@@ -7,7 +7,7 @@
     "envify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
-    "watchify": "*"
+    "watchify": "*",
     "del": "*",
     "gulp": "*",
     "gulp-if": "*",
@@ -19,7 +19,7 @@
     "node-notifier": "*",
     "regenerator": "*",
     "require-dir": "*",
-    "vinyl-transform": "*",
+    "vinyl-transform": "*"
   },
   "dependencies": { },
   "scripts": {
