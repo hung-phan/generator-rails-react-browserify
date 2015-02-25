@@ -38,6 +38,17 @@ Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if y
 I define all my javascript modules in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
 folder later.
 
+## Multiple bundle for browserify
+Append suffix __-build.js__ for each built module for multiple browserify bundles.
+
+```
+application/
+  |- app/
+  |  |- assets/
+  |  |  |- sources/
+  |  |  |  |- <page-module>-build.js
+```
+
 ### package.json
 
 Manage development dependencies for javascript with incremental rebuilding for each module. Turn ES6+ code into vanilla ES5
