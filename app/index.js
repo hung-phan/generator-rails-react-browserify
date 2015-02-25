@@ -146,7 +146,7 @@ module.exports = yeoman.generators.Base.extend({
 
   copyTasks: function() {
     this.copy('_package.json', 'package.json');
-    this.copy('_preprocessor.json', 'preprocessor.json');
+    this.copy('_preprocessor.js', 'preprocessor.js');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gulpfile.js', 'gulpfile.js');
     this.directory('tasks', 'tasks');
