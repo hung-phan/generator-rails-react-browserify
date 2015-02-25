@@ -39,7 +39,7 @@ I define all my javascript modules in 'app/assets/sources', which will be compil
 folder later.
 
 ## Multiple bundle for browserify
-Append suffix __-build.js__ for each built module for multiple browserify bundles.
+Append suffix __-build.js__ for each built module for browserify.
 
 ```
 application/
