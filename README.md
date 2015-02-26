@@ -44,8 +44,8 @@ Append suffix __-build.js__ for each built module for browserify.
 ```
 application/
   |- app/
-  |  |- assets/
-  |  |  |- sources/
+  |  |- frontend/
+  |  |  |- javascripts/
   |  |  |  |- <page-module>-build.js
 ```
 
@@ -133,7 +133,8 @@ application/
   |  |  |  |- build/
   |  |  |  |  |- page-module-build.js
   |  |  |  |- application.js
-  |  |  |- sources/
+  |  |- frontend/
+  |  |  |- javascripts/
   |  |  |  |- <page-module>/
   |  |  |  |- <page-module>-build.js
   |  |  |- stylesheets/
