@@ -225,7 +225,7 @@ module.exports = yeoman.generators.Base.extend({
 
 
     this.write(path, file);
-    this.template('app/main.js', 'app/frontend/javascripts/main-build.js');
+    this.template('app/main.js', 'app/frontend/javascripts/main.bundle.js');
     this.template('app/home/home.js', 'app/frontend/javascripts/home/home.js');
   },
 
