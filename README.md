@@ -150,16 +150,16 @@ application/
   |  |  |  |- application.html.erb
   |- bin/
   |- config/
+  |  |- browserify/
+  |  |  |- config.json
+  |  |  |- errors-handler.js
+  |  |  |- javascript-build.js
   |  |- initializers/
   |  |  |- bower_rails.rb # bower rails config
   |- db/
   |- lib/
   |- log/
   |- public/
-  |- tasks/
-  |  |- config.json
-  |  |- errors-handler.js
-  |  |- javascript-build.js
   |- test/
   |- vendor/
   |  |- assets/
