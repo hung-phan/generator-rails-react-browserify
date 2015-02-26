@@ -35,19 +35,21 @@ Answer 'Yes' to all 'Overwrite' actions. Then, update 'config/database.yml' if y
 
 ## Application template
 
-I define all my javascript modules in 'app/assets/sources', which will be compiled into 'app/assets/javascript/build'
+I define all my javascript modules in 'app/frontend/javascripts', which will be compiled into 'app/assets/javascript/build'
 folder later.
 
 ## Multiple bundle for browserify
-Append suffix __-build.js__ for each built module for browserify.
+Append suffix __.bundle.js__ for each built module.
 
 ```
 application/
   |- app/
   |  |- frontend/
   |  |  |- javascripts/
-  |  |  |  |- <page-module>-build.js
+  |  |  |  |- <page-module>.bundle.js
 ```
+
+Change the default configuration for built glob in `config/browserify/config.json` if you want to use other suffix than '.bundle.js'
 
 ### package.json
 
@@ -59,11 +61,11 @@ Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/
 
 ### gulpfile.js
 
-- `tasks/config.json` is responsible for controlling development and production build for javascript modules. Additionally, you can
+- `config/browserify/config.json` is responsible for controlling development and production build for javascript modules. Additionally, you can
   define extra configurations here, then, it will be loaded into `javascript-build.js` via `config = require('./config.json');`
-- `tasks/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
+- `config/browserify/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
   has use this functions
-- `tasks/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
+- `config/browserify/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
 
 ### Current transformation applied
 
@@ -131,12 +133,12 @@ application/
   |  |  |- images/
   |  |  |- javascripts/
   |  |  |  |- build/
-  |  |  |  |  |- page-module-build.js
+  |  |  |  |  |- page-module.bundle.js
   |  |  |  |- application.js
   |  |- frontend/
   |  |  |- javascripts/
-  |  |  |  |- <page-module>/
-  |  |  |  |- <page-module>-build.js
+  |  |  |  |- <page-module-dependencies>/
+  |  |  |  |- <page-module>.bundle.js
   |  |  |- stylesheets/
   |  |  |  |- application.css
   |  |- controllers/
