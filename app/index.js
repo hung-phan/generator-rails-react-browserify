@@ -149,7 +149,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_preprocessor.js', 'preprocessor.js');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gulpfile.js', 'gulpfile.js');
-    this.directory('tasks', 'tasks');
+    this.directory('browserify', 'config/browserify');
     this.directory('__tests__', '__tests__');
   },
 
@@ -225,8 +225,8 @@ module.exports = yeoman.generators.Base.extend({
 
 
     this.write(path, file);
-    this.template('app/main.js', 'app/assets/sources/main-build.js');
-    this.template('app/home/home.js', 'app/assets/sources/home/home.js');
+    this.template('app/main.js', 'app/frontend/javascripts/main-build.js');
+    this.template('app/home/home.js', 'app/frontend/javascripts/home/home.js');
   },
 
   reactConfig: function() {
