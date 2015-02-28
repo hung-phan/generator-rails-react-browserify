@@ -63,9 +63,9 @@ Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/
 
 - `config/browserify/config.json` is responsible for controlling development and production build for javascript modules. Additionally, you can
   define extra configurations here, then, it will be loaded into `javascript-build.js` via `config = require('./config.json');`
-- `config/browserify/errors-handler.json` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
+- `config/browserify/errors-handler.js` is responsible for errors handling. Currently, there is only [Browserify](http://browserify.org/)
   has use this functions
-- `config/browserify/javascript-build.json` is responsible for transforming ES6+ into ES5 and building javascript modules.
+- `config/browserify/javascript-build.js` is responsible for transforming ES6+ into ES5 and building javascript modules.
 
 ### Current transformation applied
 
