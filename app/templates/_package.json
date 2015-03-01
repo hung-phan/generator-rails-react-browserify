@@ -21,7 +21,10 @@
     "envify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
-    "lodash": "*"
+    "lodash": "*",<% if (includeSuperagent) { %>
+    "superagent": "*",<% } %>
+    "react": "*",
+    "react-router": "*"
   },
   "scripts": {
     "test": "jest"
@@ -31,11 +34,7 @@
   },
   "browser": { },
   "browserify-shim": {
-    "jquery": "global:$",
-    "lodash": "global:_",
-    "react": "global:React",
-    "react-router": "global:ReactRouter",
-    "superagent": "global:superagent"
+    "jquery": "global:$"
   },
   "license": "MIT",
   "engines": {
