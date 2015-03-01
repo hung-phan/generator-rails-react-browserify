@@ -216,9 +216,11 @@ module.exports = yeoman.generators.Base.extend({
 
     //modify file before insert
     file = file.replace("//= require turbolinks\n", '')
+               .replace("//= require jquery_ujs\n", '') 
                .replace("//= require_tree .",
                         "//= require react\n" +
                         "//= require build/main.bundle" +
+                        "//= require jquery_ujs\n" +
                         "//= require react_ujs\n");
 
 
