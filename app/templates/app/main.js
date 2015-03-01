@@ -4,6 +4,7 @@
 let $          = require('jquery');<% if (includeLodash) { %>
 let _          = require('lodash');<% } %><% if (includeSuperagent) { %>
 let superagent = require('superagent');<% } %>
+let React      = window.React = require('react/addons');
 let Router     = require('react-router');
 
 // component
