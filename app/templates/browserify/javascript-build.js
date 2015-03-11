@@ -53,7 +53,7 @@ gulp.task('javascript:dev', function () {
         gutil.log(gutil.colors.green('Bundle'), filename + gutil.colors.magenta(' in ' + time + 'ms'));
       });
       b.on('error', errorsHandler.browserifyErrorHandler);
-      b.on('update', bundle);
+      b.on('update', bundle(filename));
       b.transform(babelify);
       b.transform(shimify);
       b.transform(envify({
@@ -66,16 +66,17 @@ gulp.task('javascript:dev', function () {
     });
   };
 
-  bundle = function() {
-    var stream = gulp.src([source])
-                   .pipe(plumber({ errorHandler: errorsHandler.browserifyErrorHandler }))
-                   .pipe(bundler())
-                   .pipe(gulp.dest(config.browserify.build));
-
-    return stream;
+  bundle = function(filename){
+    return function() {
+      var steam = gulp.src([filename])
+                      .pipe(plumber({ errorHandler: errorsHandler.browserifyErrorHandler }))
+                      .pipe(bundler())
+                      .pipe(gulp.dest(config.browserify.build));
+      return steam;
+    };
   };
 
-  return bundle();
+  return bundle(source)();
 });
 
 // build task
