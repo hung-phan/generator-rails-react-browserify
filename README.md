@@ -80,7 +80,7 @@ Add `require('babel/pollyfill');` to support es6 generator syntax
 
 ```bash
 $ guld javascript:clean # remove the build folder placed at 'app/assets/javascripts/build'
-$ guld javascript:dev # watch over changes for multiple js bundle
+$ guld javascript:dev # watch over changes for multiple js bundle, rebuild for each module that changes
 $ guld javascript:dev --only main.bundle.js # watch over changes for single js module
 $ guld javascript:build # build for production with no source map
 ```
