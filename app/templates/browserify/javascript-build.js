@@ -58,7 +58,7 @@ gulp.task('javascript:dev', function () {
       b.transform(shimify);
       b.transform(envify({
         NODE_ENV: 'development'
-      }));
+      }), { global: true });
 
       cached[filename] = b;
 
@@ -94,7 +94,7 @@ gulp.task('javascript:build', ['javascript:clean'], function() {
     b.transform(shimify);
     b.transform(envify({
       NODE_ENV: 'production'
-    }));
+    }), { global: true });
 
     return b.bundle();
   });

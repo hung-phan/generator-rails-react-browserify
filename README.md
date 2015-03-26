@@ -76,6 +76,20 @@ Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/
 ### ES6 generator
 Add `require('babel/pollyfill');` to support es6 generator syntax
 
+### Apply transform to `node__modules/some_modules`
+
+Specify transformation on the `node_modules/module/package.json` itself
+
+```json
+"browserify": { "transform": [ "babelify" ] },
+```
+
+Use [global transform](https://github.com/substack/node-browserify#btransformtr-opts)
+
+```javascript
+b.transform(transform, { global: true });
+```
+
 ### Available gulp task
 
 ```bash
