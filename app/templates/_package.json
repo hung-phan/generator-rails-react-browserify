@@ -6,7 +6,6 @@
     "jest-cli": "*",
     "minimist": "*",
     "node-notifier": "*",
-    "regenerator": "*",
     "require-dir": "*",
     "vinyl-transform": "*"
   },
