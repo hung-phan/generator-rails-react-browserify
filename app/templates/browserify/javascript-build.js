@@ -45,7 +45,6 @@ gulp.task('javascript:dev', function () {
       }
 
       var b = watchify(browserify(filename, _.extend({
-                runtime: require.resolve('regenerator/runtime'),
                 debug: true
               }, watchify.args)));
 
@@ -82,9 +81,7 @@ gulp.task('javascript:dev', function () {
 // build task
 gulp.task('javascript:build', ['javascript:clean'], function() {
   var browserified = transform(function(filename) {
-    var b = browserify(filename, {
-              runtime: require.resolve('regenerator/runtime')
-            });
+    var b = browserify(filename);
 
     b.on('error', errorsHandler.browserifyErrorHandler);
     b.on('time', function(time) {

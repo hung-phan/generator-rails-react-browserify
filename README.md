@@ -74,7 +74,7 @@ Make sure that view their [recipes](https://github.com/thlorenz/browserify-shim/
 - [envify](https://github.com/babel/babelify)
 
 ### ES6 generator
-Add `require('babel/pollyfill');` to support es6 generator syntax
+Add `require('babel/pollyfill');` to support es6 generator syntax at the top level bundle
 
 ### Apply transform to `node__modules/some_modules`
 
