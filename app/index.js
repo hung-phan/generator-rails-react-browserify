@@ -167,7 +167,7 @@ module.exports = yeoman.generators.Base.extend({
       var path   = 'config/routes.rb',
       hook   = 'Rails.application.routes.draw do\n',
       file   = this.readFileAsString(path),
-      insert = "  mount API::Base => '/api'\n";
+      insert = "  mount APIS::Base => '/api'\n";
 
       if (file.indexOf(insert) === -1) {
         this.write(path, file.replace(hook, hook + insert));
@@ -177,7 +177,7 @@ module.exports = yeoman.generators.Base.extend({
 
   grapeInitFile: function() {
     if (this.includeGrape) {
-      this.directory('api', 'app/api');
+      this.directory('apis', 'app/apis');
     }
   },
 
