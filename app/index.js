@@ -146,6 +146,7 @@ module.exports = yeoman.generators.Base.extend({
 
   copyTasks: function() {
     this.copy('_package.json', 'package.json');
+    this.copy('_compiler.js', 'compiler.js');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gulpfile.js', 'gulpfile.js');
     this.directory('browserify', 'config/browserify');
