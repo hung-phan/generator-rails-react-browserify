@@ -1,7 +1,8 @@
 'use strict'
 
 // lib
-let $          = require('jquery');<% if (includeLodash) { %>
+
+let $          = window.jQuery = window.$ = require('jquery'); // export jQuery to global env<% if (includeLodash) { %>
 let _          = require('lodash');<% } %><% if (includeSuperagent) { %>
 let superagent = require('superagent');<% } %>
 let React      = window.React = require('react/addons');
