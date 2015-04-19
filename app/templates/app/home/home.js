@@ -1,7 +1,7 @@
 'use strict';
 
 // lib
-let React = require('react/addons');
+import React from 'react/addons';
 
 // component
 let Home  = React.createClass({
