@@ -146,11 +146,9 @@ module.exports = yeoman.generators.Base.extend({
 
   copyTasks: function() {
     this.copy('_package.json', 'package.json');
-    this.copy('_preprocessor.js', 'preprocessor.js');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gulpfile.js', 'gulpfile.js');
     this.directory('browserify', 'config/browserify');
-    this.directory('__tests__', '__tests__');
   },
 
   npmInstall: function() {
@@ -216,6 +214,7 @@ module.exports = yeoman.generators.Base.extend({
 
     //modify file before insert
     file = file.replace("//= require turbolinks\n", '')
+               .replace("//= require jquery\n", '')
                .replace("//= require jquery_ujs\n", '')
                .replace("//= require_tree .",
                         "//= require build/main.bundle\n" +

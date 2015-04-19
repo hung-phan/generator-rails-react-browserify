@@ -3,7 +3,6 @@
   "devDependencies": {
     "watchify": "*",
     "del": "*",
-    "jest-cli": "*",
     "minimist": "*",
     "node-notifier": "*",
     "require-dir": "*",
@@ -20,21 +19,14 @@
     "envify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
+    "jquery": "*",
     "lodash": "*",<% if (includeSuperagent) { %>
     "superagent": "*",<% } %>
     "react": "*",
     "react-router": "*"
   },
-  "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "scriptPreprocessor": "./preprocessor.js"
-  },
   "browser": { },
-  "browserify-shim": {
-    "jquery": "global:$"
-  },
+  "browserify-shim": { },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
