@@ -93,10 +93,10 @@ b.transform(transform, { global: true });
 ### Available gulp task
 
 ```bash
-$ guld javascript:clean # remove the build folder placed at 'app/assets/javascripts/build'
-$ guld javascript:dev # watch over changes for multiple js bundle, rebuild for each module that changes
-$ guld javascript:dev --only main.bundle.js # watch over changes for single js module
-$ guld javascript:build # build for production with no source map
+$ gulp javascript:clean # remove the build folder placed at 'app/assets/javascripts/build'
+$ gulp javascript:dev # watch over changes for multiple js bundle, rebuild for each module that changes
+$ gulp javascript:dev --only main.bundle.js # watch over changes for single js module
+$ gulp javascript:build # build for production with no source map
 ```
 
 ## Start developing
