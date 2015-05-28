@@ -29,7 +29,7 @@
     "react-router": "*"
   },
   "scripts": {
-    "test": "mocha --watch --compilers js:compiler.js app/frontend/javascripts/**/*-test.js"
+    "test": "mocha --watch --compilers js:compiler.js 'app/frontend/javascripts/**/*-test.js'"
   },
   "browser": { },
   "browserify-shim": { },
