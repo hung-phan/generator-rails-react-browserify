@@ -152,6 +152,10 @@ if you need to in `package.json`
 npm test
 ```
 
+```bash
+npm run test-converage # generate test coverage using istanbul
+```
+
 ## Structure
 
 ```
