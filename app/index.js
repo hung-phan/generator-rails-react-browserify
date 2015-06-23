@@ -288,7 +288,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   copySpecs: function() {
-    this.copy('app/home/home-test.js', 'app/frontend/javascripts/home/home-test.js');
+    this.copy('spec/apis/person_spec.rb', 'spec/apis/person_spec.rb');
   },
 
   defaultStylesheet: function() {
