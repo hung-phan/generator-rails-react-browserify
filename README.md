@@ -172,12 +172,12 @@ application/
   |  |  |  |- build/
   |  |  |  |  |- page-module.bundle.js
   |  |  |  |- application.js
+  |  |  |- stylesheets/
+  |  |  |  |- application.css
   |  |- frontend/
   |  |  |- javascripts/
   |  |  |  |- <page-module-dependencies>/
   |  |  |  |- <page-module>.bundle.js
-  |  |  |- stylesheets/
-  |  |  |  |- application.css
   |  |- controllers/
   |  |- helpers/
   |  |- mailers/
