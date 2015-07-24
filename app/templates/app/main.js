@@ -1,15 +1,13 @@
 'use strict'
 
-// lib
+import $      from 'jquery';
+import React  from 'react/addons';
+import Router from 'react-router';
+import Home   from './home/home';
 
-let $          = window.jQuery = window.$ = require('jquery'); // export jQuery to global env<% if (includeLodash) { %>
-let _          = require('lodash');<% } %><% if (includeSuperagent) { %>
-let superagent = require('superagent');<% } %>
-let React      = window.React = require('react/addons');
-let Router     = require('react-router');
-
-// component
-let Home = require('./home/home');
+// expose jQuery for jquery_ujs and React for react_ujs
+window.jQuery = window.$ = $;
+window.React = React;
 
 $(document).ready(function() {
   // define routing
