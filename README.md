@@ -4,6 +4,8 @@
 
 [![NPM](https://nodei.co/npm/generator-rails-react-browserify.png?downloads=true)](https://nodei.co/npm/generator-rails-react-browserify/)
 
+## Deprecated - Please consider to use [generator-rails-react-webpack](https://github.com/hung-phan/generator-rails-react-webpack)
+
 ## Getting Started
 
 To install `generator-rails-react-browserify` from npm, run:
